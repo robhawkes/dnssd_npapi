@@ -1,0 +1,42 @@
+set(MOZILLA_CHROME_URI, "chrome://extension/content/page.html")
+
+if(CMAKE_SIZEOF_VOID_P MATCHES "8" AND NOT APPLE)
+   set(PLUGIN_NAME "Plugin64")
+else()
+   set(PLUGIN_NAME "Plugin")
+endif()
+set(PLUGIN_PREFIX "Plugin")
+set(COMPANY_NAME "example_com")
+
+# ActiveX constants:
+set(FBTYPELIB_NAME PluginLib)
+set(FBTYPELIB_DESC "${PLUGIN_NAME} 1.0 Type Library")
+set(IFBControl_DESC "${PLUGIN_NAME} Control Interface")
+set(FBControl_DESC "${PLUGIN_NAME} Control Class")
+set(IFBComJavascriptObject_DESC "${PLUGIN_NAME} IComJavascriptObject Interface")
+set(FBComJavascriptObject_DESC "${PLUGIN_NAME} ComJavascriptObject Class")
+set(IFBComEventSource_DESC "${PLUGIN_NAME} IFBComEventSource Interface")
+set(AXVERSION_NUM "1")
+
+# NOTE: THESE GUIDS *MUST* BE UNIQUE TO YOUR PLUGIN/ACTIVEX CONTROL!  YES, ALL OF THEM!
+set(FBTYPELIB_GUID 96F9D65E-001E-4F95-8485-127053245425)
+set(IFBControl_GUID 6132CF97-2396-4A59-BB14-37C73E9BBC66)
+set(FBControl_GUID AC1B5627-4F63-4196-9053-868EE6A0C041)
+set(IFBComJavascriptObject_GUID B2CAD6E0-B034-4F25-8041-AE9A1CC88586)
+set(FBComJavascriptObject_GUID 341CD4A1-57B9-43AA-883B-B876C81A3B19)
+set(IFBComEventSource_GUID 18F36549-1DED-4E49-BD6B-E12C5E47E80F)
+
+# these are the pieces that are relevant to using it from Javascript
+set(ACTIVEX_PROGID "example_com.Plugin")
+set(MOZILLA_PLUGINID "example.com/Plugin")
+
+# strings
+set(FBSTRING_CompanyName "Example")
+set(FBSTRING_FileDescription "Provides DNS Service Discovery support for example app")
+set(FBSTRING_PLUGIN_VERSION "0.1")
+set(FBSTRING_LegalCopyright "Copyright 2011")
+set(FBSTRING_PluginFileName "np${PLUGIN_NAME}.dll")
+set(FBSTRING_ProductName "DNS Service Discovery Plugin for example app")
+set(FBSTRING_FileExtents "")
+set(FBSTRING_PluginName "DNS Service Discovery Plugin for example app")
+set(FBSTRING_MIMEType "application/x-exampleplugin")
